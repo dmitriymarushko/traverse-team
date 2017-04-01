@@ -9,8 +9,10 @@ Site: email, link to a contact form, etc. (Prepare yourself to get spammed if yo
 Twitter: your Twitter username.
 Location: City, Country.
 
+
 /* THANKS */
 Name: name or url
+
 
 /* SITE */
 Last update: YYYY/MM/DD (Updating this could get annoying)
