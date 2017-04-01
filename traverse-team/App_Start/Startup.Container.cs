@@ -1,10 +1,10 @@
-﻿namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
     using System.Reflection;
     using System.Web.Mvc;
     using Autofac;
     using Autofac.Integration.Mvc;
-    using Traverse.Team.Services;
+    using Services;
     using Owin;
 
     /// <summary>

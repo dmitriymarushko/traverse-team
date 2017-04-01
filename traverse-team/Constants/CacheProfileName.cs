@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team.Constants
+﻿namespace Traverse.Team.Web.Constants
 {
     public static class CacheProfileName
     {

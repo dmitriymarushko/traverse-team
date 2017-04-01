@@ -1,8 +1,8 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     using System.Web.Mvc;
     using Boilerplate.Web.Mvc;
-    using Traverse.Team.Constants;
+    using Constants;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 

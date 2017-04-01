@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +8,7 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Boilerplate.Web.Mvc;
-    using Traverse.Team.Constants;
+    using Constants;
 
     /// <summary>
     /// Builds <see cref="SyndicationFeed"/>'s containing meta data about the feed and the feed entries.

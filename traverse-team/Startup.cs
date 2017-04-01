@@ -1,6 +1,6 @@
-﻿[assembly: Microsoft.Owin.OwinStartup(typeof(Traverse.Team.Startup))]
+﻿[assembly: Microsoft.Owin.OwinStartup(typeof(Traverse.Team.Web.Startup))]
 
-namespace Traverse.Team
+namespace Traverse.Team.Web
 {
     using System.Web.Mvc;
     using NWebsec.Owin;
@@ -51,6 +51,8 @@ namespace Traverse.Team
             // app.UseCsp(x => x.UpgradeInsecureRequests());
 
             ConfigureContainer(app);
+
+            ConfigureAuth(app);
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }

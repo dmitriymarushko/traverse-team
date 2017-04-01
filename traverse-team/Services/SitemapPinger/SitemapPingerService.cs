@@ -1,11 +1,11 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     using System.Globalization;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Boilerplate.Web.Mvc;
-    using Traverse.Team.Constants;
+    using Constants;
 
     public class SitemapPingerService : ISitemapPingerService
     {

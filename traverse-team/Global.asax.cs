@@ -1,11 +1,11 @@
-﻿namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
     using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
     using Boilerplate.Web.Mvc;
-    using Traverse.Team.Services;
+    using Services;
     using NWebsec.Csp;
 
     public class MvcApplication : System.Web.HttpApplication

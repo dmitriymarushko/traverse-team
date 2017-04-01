@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     /// <summary>
     /// Generates sitemap XML for the current site.

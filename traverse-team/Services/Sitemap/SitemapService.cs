@@ -1,11 +1,11 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Web.Mvc;
     using Boilerplate.Web.Mvc;
     using Boilerplate.Web.Mvc.Sitemap;
-    using Traverse.Team.Constants;
+    using Constants;
 
     /// <summary>
     /// Generates sitemap XML for the current site.

@@ -1,9 +1,9 @@
-﻿namespace Traverse.Team.Controllers
+﻿namespace Traverse.Team.Web.Controllers
 {
     using System.Net;
     using System.Web.Mvc;
     using System.Web.UI;
-    using Traverse.Team.Constants;
+    using Constants;
 
     /// <summary>
     /// Provides methods that respond to HTTP requests with HTTP errors.

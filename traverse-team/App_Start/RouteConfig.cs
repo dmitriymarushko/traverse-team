@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
     using System.Web.Mvc;
     using System.Web.Routing;

@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     public interface IRobotsService
     {

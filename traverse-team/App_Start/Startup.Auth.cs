@@ -1,25 +1,24 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Facebook;
-using Microsoft.Owin.Security.Cookies;
-//using Microsoft.Owin.Security.Google;
-using Owin;
-using System;
-
-namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+    using Microsoft.Owin.Security.Facebook;
+    using Microsoft.Owin.Security.Cookies;
+    //using Microsoft.Owin.Security.Google;
+    using Owin;
+    using System;
+    using Models;
+
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            /*
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            */
            
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
@@ -27,8 +26,8 @@ namespace Traverse.Team
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                //LoginPath = new PathString("/Account/Login"),
-                LoginPath = new PathString("/Auth"),
+                LoginPath = new PathString("/Account/Login"),
+                //LoginPath = new PathString("/Auth"),
                 /*
                 Provider = new CookieAuthenticationProvider
                 {
@@ -65,8 +64,8 @@ namespace Traverse.Team
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "646977048825636",
-               appSecret: "847a09dafe20b3f31eb992871cf4b26f");
+               appId: "",
+               appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

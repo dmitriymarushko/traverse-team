@@ -1,11 +1,11 @@
-﻿namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
     using Boilerplate.Web.Mvc.Filters;
     using NWebsec.Mvc.HttpHeaders;
     using NWebsec.Mvc.HttpHeaders.Csp;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using Traverse.Team.Constants;
+    using Constants;
 
     public static class FilterConfig
     {

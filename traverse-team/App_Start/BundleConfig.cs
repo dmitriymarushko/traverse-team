@@ -1,7 +1,7 @@
-﻿namespace Traverse.Team
+﻿namespace Traverse.Team.Web
 {
     using System.Web.Optimization;
-    using Traverse.Team.Constants;
+    using Constants;
 
     public static class BundleConfig
     {

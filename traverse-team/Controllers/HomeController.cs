@@ -1,4 +1,4 @@
-﻿namespace Traverse.Team.Controllers
+﻿namespace Traverse.Team.Web.Controllers
 {
     using System.Diagnostics;
     using System.Net;
@@ -8,8 +8,8 @@
     using System.Web.Mvc;
     using Boilerplate.Web.Mvc;
     using Boilerplate.Web.Mvc.Filters;
-    using Traverse.Team.Constants;
-    using Traverse.Team.Services;
+    using Constants;
+    using Services;
 
     public class HomeController : Controller
     {
@@ -45,6 +45,7 @@
         #endregion
 
         [Route("", Name = HomeControllerRoute.GetIndex)]
+        //[RequireHttps]
         public ActionResult Index()
         {
             return this.View(HomeControllerAction.Index);

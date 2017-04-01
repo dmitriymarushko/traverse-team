@@ -1,10 +1,10 @@
-﻿namespace Traverse.Team.Services
+﻿namespace Traverse.Team.Web.Services
 {
     using System.Text;
     using System.Web.Mvc;
     using System.Xml.Linq;
     using Boilerplate.Web.Mvc;
-    using Traverse.Team.Constants;
+    using Constants;
     
     public class BrowserConfigService : IBrowserConfigService
     {
