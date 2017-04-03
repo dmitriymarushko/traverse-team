@@ -31,15 +31,61 @@
             // Enable attribute routing.
             routes.MapMvcAttributeRoutes();
 
+            // 
+            routes.MapRoute(
+               name: "DefaultLocalized",
+               url: "{lang}/{controller}/{action}/{id}",
+               defaults: new
+               {
+                   controller = "Home",
+                   action = "Index",
+                   id = UrlParameter.Optional,
+                   lang = "en"
+               });
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            // TODO: remove this later
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetIndex,
+                url: "{lang}/home/index",
+                defaults: new { lang = "en" }
+                );
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetAbout,
+                url: "{lang}/home/about",
+                defaults: new { lang = "en" }
+                );
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetContact,
+                url: "{lang}/home/contact",
+                defaults: new { lang = "en" }
+                );
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetBrowse,
+                url: "{lang}/home/browse",
+                defaults: new { lang = "en" }
+                );
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetPrices,
+                url: "{lang}/home/prices",
+                defaults: new { lang = "en" }
+                );
+
             // Normal routes are not required because we are using attribute routing. So we don't need this MapRoute 
             // statement. Unfortunately, Elmah.MVC has a bug in which some 404 and 500 errors are not logged without 
             // this route in place. So we include this but look out on these pages for a fix:
             // https://github.com/alexbeletsky/elmah-mvc/issues/60
             // https://github.com/ASP-NET-MVC-Boilerplate/Templates/issues/8
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
     }
 }

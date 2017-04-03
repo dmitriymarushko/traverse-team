@@ -167,8 +167,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.RouteUrl(HomeControllerRoute.GetAbout)"><span aria-hidden="true" class="fa fa-users"></span> About</a></li>
-                    <li><a href="@Url.RouteUrl(HomeControllerRoute.GetContact)"><span aria-hidden="true" class="fa fa-phone"></span> Contact</a></li>
+                    <li><a href="@Url.RouteUrl(HomeControllerRoute.GetBrowse)"><span aria-hidden="true" class="fa fa-folder"></span> @Resources.Home.Browse</a></li>
+                    <li><a href="@Url.RouteUrl(HomeControllerRoute.GetAbout)"><span aria-hidden="true" class="fa fa-users"></span> @Resources.Home.About</a></li>
+                    <li><a href="@Url.RouteUrl(HomeControllerRoute.GetContact)"><span aria-hidden="true" class="fa fa-phone"></span> @Resources.Home.Contact</a></li>
+                    @*<li><a href="@Url.RouteUrl(HomeControllerRoute.GetPrices)"><span aria-hidden="true" class="fa fa-dollar"></span> @Resources.Home.Prices</a></li>*@
                     <li><a href="@Url.RouteUrl(HomeControllerRoute.GetFeed)"><span aria-hidden="true" class="fa fa-rss"></span> RSS</a></li>
                     @if (HttpContext.Current.IsDebuggingEnabled)
                     {
@@ -185,13 +187,20 @@
                 </ul>
                 <form action="@Url.RouteUrl(HomeControllerRoute.GetSearch)" class="navbar-form navbar-right" method="get" role="search">
                     <div class="input-group">
-                        <input aria-label="Search" class="form-control" maxlength="2048" name="query" placeholder="Search" title="Search" type="text">
+                        <input aria-label="Search" class="form-control" maxlength="2048" name="query" placeholder="@Resources.Global.Search" title="@Resources.Global.Search" type="text">
                         <div class="input-group-btn">
                             <button aria-label="Search" class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
                         </div>
                     </div>
                 </form>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: -5px;">
+                    @langSelector()
+                </ul>
             </div>
         </div>
     </nav>
@@ -205,7 +214,7 @@
         @RenderBody()
         <hr>
         <footer role="contentinfo">
-            <p>&copy; @DateTime.Now.Year - @Application.Name</p>
+            <p>&copy; @DateTime.Now.Year - @Application.Name</p> <p>&copy; @DateTime.Now.ToLongTimeString()</p>
         </footer>
     </div>
 
@@ -217,3 +226,34 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+@helper langSelector()
+{
+    string curLang = "en";
+    if (this.ViewContext.RouteData.Values["lang"] != null)
+    {
+        curLang = this.ViewContext.RouteData.Values["lang"].ToString();
+    }
+
+    var enabledLangsList = Traverse.Team.Web.Helpers.LocalizationHelper.GetSupportedLocales();
+
+    var targetPath = string.Format("/{0}/{1}{2}",
+        ViewContext.RouteData.Values["controller"].ToString(),
+        ViewContext.RouteData.Values["action"].ToString(),
+        Request.Url.Query);
+    var hostRoot = string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority);
+    var targetUrlMask = string.Format("{0}/{{0}}/{1}", hostRoot, targetPath);
+
+    <li class="dropdown special" style="margin-left: 15px;">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            @(curLang)
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu lang-selector">
+            @foreach (var lang in enabledLangsList)
+            {
+                <li><a href="@(string.Format(targetUrlMask, lang))">@lang</a></li>
+            }
+        </ul>
+    </li>
+}

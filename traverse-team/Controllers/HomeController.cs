@@ -44,25 +44,31 @@
 
         #endregion
 
-        [Route("", Name = HomeControllerRoute.GetIndex)]
         //[RequireHttps]
         public ActionResult Index()
         {
             return this.View(HomeControllerAction.Index);
         }
 
-        [Route("about", Name = HomeControllerRoute.GetAbout)]
         public ActionResult About()
         {
             return this.View(HomeControllerAction.About);
         }
 
-        [Route("contact", Name = HomeControllerRoute.GetContact)]
         public ActionResult Contact()
         {
             return this.View(HomeControllerAction.Contact);
         }
 
+        public ActionResult Prices()
+        {
+            return this.View(HomeControllerAction.Prices);
+        }
+
+        public ActionResult Browse()
+        {
+            return this.View(HomeControllerAction.Browse);
+        }
         /// <summary>
         /// Gets the Atom 1.0 feed for the current site. Note that Atom 1.0 is used over RSS 2.0 because Atom 1.0 is a 
         /// newer and more well defined format. Atom 1.0 is a standard and RSS is not. See
