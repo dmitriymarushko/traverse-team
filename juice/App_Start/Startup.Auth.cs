@@ -9,6 +9,7 @@
     using Owin;
     using System;
     using Models;
+    using System.Configuration;
 
     public partial class Startup
     {
@@ -64,8 +65,8 @@
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-               //appId: "",
-               //appSecret: "");
+            //   appId: "",
+            //   appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

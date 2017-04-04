@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Juice.Services
+namespace Juice.Test
 {
     class Program
     {
@@ -13,6 +13,7 @@ namespace Juice.Services
             AddUpdateAppSettings("NewSetting", "May 7, 2014");
             AddUpdateAppSettings("Setting1", "May 8, 2014");
             ReadAllSettings();
+            Console.ReadKey();
         }
 
         static void ReadAllSettings()
