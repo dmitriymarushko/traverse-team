@@ -251,5 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 
-#vietrov
+/AppSettingsSecrets.config
 packages/
