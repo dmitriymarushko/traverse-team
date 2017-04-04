@@ -218,6 +218,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.Container.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Constants\Application.cs" />
     <Compile Include="Constants\CacheSetting.cs" />
     <Compile Include="Constants\CacheProfileName.cs" />
@@ -390,6 +392,12 @@
     <Content Include="Content\fontawesome\bordered-pulled.less" />
     <Content Include="Content\fontawesome\animated.less" />
     <Content Include="Content\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Views\web.config" />
+    <Content Include="Areas\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Views\_ViewStart.cshtml" />
+    <Content Include="App_Code\Helpers.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -515,6 +523,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

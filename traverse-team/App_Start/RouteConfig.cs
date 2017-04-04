@@ -29,9 +29,9 @@
             routes.IgnoreRoute("humans.txt");
 
             // Enable attribute routing.
-            routes.MapMvcAttributeRoutes();
+            //routes.MapMvcAttributeRoutes();
 
-            // 
+            //
             routes.MapRoute(
                name: "DefaultLocalized",
                url: "{lang}/{controller}/{action}/{id}",
@@ -41,12 +41,16 @@
                    action = "Index",
                    id = UrlParameter.Optional,
                    lang = "en"
-               });
+               },
+               constraints: new { lang = "[a-z]{2}" },
+               namespaces: new[] { "Traverse.Team.Web.Controllers" }
+               );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, lang = "en" },
+                namespaces: new[] { "Traverse.Team.Web.Controllers" }
             );
 
             // TODO: remove this later
@@ -75,6 +79,24 @@
                 url: "{lang}/home/prices",
                 defaults: new { lang = "en" }
                 );
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetFeed,
+                url: "");
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetSearch,
+                url: "");
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetBrowserConfigXml,
+                url: "");
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetManifestJson,
+                url: "");
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetOpenSearchXml,
+                url: "");
+            routes.MapRoute(
+                name: Constants.HomeControllerRoute.GetRobotsText,
+                url: "");
 
             // Normal routes are not required because we are using attribute routing. So we don't need this MapRoute 
             // statement. Unfortunately, Elmah.MVC has a bug in which some 404 and 500 errors are not logged without 
